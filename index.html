@@ -3,6 +3,7 @@ hello world
 </h1>
 <!--<a href="hello.html">Hoi Dea</a>-->
 <button style="width: 200px" onclick="var name = prompt('What is your name?', 'Harry Potter')">What is your name?</button>
+<button style="width: 100px" onclick="alert(greeting(name))">Hi</button>
 <script>
   function greeting(name) {
     if (name == "" || typeof name == undefined) {
@@ -11,4 +12,3 @@ hello world
       return "Hello, " + name + ".";
     }
 </script>
-<button style="width: 100px" onclick="alert(greeting(name))">Hi</button>
