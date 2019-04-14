@@ -7,7 +7,7 @@ hello world
 <script>
   var name;
   function greeting(name) {
-    return name ? "Hello, " + name + "." : "Hello";
+    return name == null ? "Hello, " + name + "." : "Hello";
   }
   document.getElementById("name").addEventListener("click", function() {
     name = prompt('What is your name?');
