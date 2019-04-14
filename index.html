@@ -2,14 +2,17 @@
 hello world
 </h1>
 <!--<a href="hello.html">Hoi Dea</a>-->
-<button style="width: 200px" onclick="var name = prompt('What is your name?', 'Harry Potter')">What is your name?</button>
-<button style="width: 100px" onclick="alert(greeting(name))">Hi</button>
+<button id="name" style="width: 200px">What is your name?</button>
+<button id="hi" style="width: 100px" onclick="alert(greeting(name))">Hi</button>
 <script>
+  var name;
   function greeting(name) {
-    if (name == "" || typeof name == undefined) {
-      return "Hello";
-    } else {
-      return "Hello, " + name + ".";
-    }
+    return name ? "Hello, " + name + "." : "Hello";
   }
+  document.getElementById("name").addEventListener("click", function() {
+    name = prompt('What is your name?');
+  });
+  document.getElementById("hi").addEventListener("click", function() {
+    alert(greeting(name));
+  });
 </script>
