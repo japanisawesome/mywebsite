@@ -1,17 +1,22 @@
-<h1>
-hello world
-</h1>
+<h1>Hello World</h1>
 <button id="name" style="width: 200px">What is your name?</button>
 <button id="hi" style="width: 100px">Hi</button>
 <script>
-  var name;
+  var x;
   function greeting(name) {
-    return name == null ? "Hello" : "Hello, " + name;
+    if (name != null || name != undefined || name == "")
+    {
+    	return "Hello, " + name;
+    }
+    else
+    {
+    	return "Hello";
+    }
   }
   document.getElementById("name").addEventListener("click", function() {
-    name = prompt('What is your name?');
+    x = prompt('What is your name?');
   });
   document.getElementById("hi").addEventListener("click", function() {
-    alert(greeting(name));
+    alert(greeting(x));
   });
 </script>
