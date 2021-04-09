@@ -1,22 +1,35 @@
 <h1>Hello World</h1>
 <button id="name" style="width: 200px">What is your name?</button>
 <button id="hi" style="width: 100px">Hi</button>
+<p>
+<input type="text" id="rev">
+<input type="button" value="Reverse!" onclick="reverse()">
+<textarea id="out" readonly></textarea>
+</p>
 <script>
-  var x;
-  function greeting(name) {
-    if (name != null || name != undefined || name == "")
-    {
-    	return "Hello, " + name;
-    }
-    else
-    {
-    	return "Hello";
-    }
-  }
-  document.getElementById("name").addEventListener("click", function() {
-    x = prompt('What is your name?');
-  });
-  document.getElementById("hi").addEventListener("click", function() {
-    alert(greeting(x));
-  });
+	var x;
+	function greeting(name) {
+		if (name != null || name != undefined || name == "")
+		{
+			return "Hello, " + name;
+		}
+		else
+		{
+			return "Hello";
+		}
+	}
+	function reverse()
+	{
+		var str = document.getElementById("rev").value;
+		var out = str.split("").reverse().join("");
+		document.getElementById("out").value = out;
+	}
+	document.getElementById("name").addEventListener("click", function()
+	{
+	x = prompt('What is your name?');
+	});
+	document.getElementById("hi").addEventListener("click", function()
+	{
+	alert(greeting(x));
+	});
 </script>
